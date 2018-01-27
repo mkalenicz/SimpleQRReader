@@ -39,7 +39,12 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == CommonStatusCodes.SUCCESS) {
                 if (data != null) {
                     Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
-                    mResultTextView.setText("QR code: \n" + barcode.displayValue);
+                    Intent testIntent = new Intent(MainActivity.this, TestActivity.class);
+                    String qrCode = "qrCode";
+                    testIntent.putExtra(qrCode, barcode.displayValue);
+                    // Start the new activity
+                    startActivity(testIntent);
+//                    mResultTextView.setText("QR code: \n" + barcode.displayValue);
                     Log.d(TAG, "Barcode read: " + barcode.displayValue);
                 } else {
                     Log.d(TAG, "No barcode captured, intent data is null");

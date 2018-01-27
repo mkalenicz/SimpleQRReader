@@ -18,11 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".barcode.BarcodeCaptureActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".TestActivity"
+            android:label="Test Activity"
+            android:parentActivityName="com.kalenicz.maciej.simpleqrreader.MainActivity" />
     </application>
 
 </manifest>
